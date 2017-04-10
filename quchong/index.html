@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str=[4,6,8,4,6,2,6,4,1,9,5,5,6];
+
+		//去重方法一：
+		function one(str){
+			//建一个新数组
+			var arr=[]
+			//遍历传入的数组，用indexOf的方法判断str数组中每一项在arr数组中是否有，没有就传进去，最后把arr得到的数组传出函数
+			for(var i=0;i<str.length;i++){
+				if(arr.indexOf(str[i])==-1){
+					arr.push(str[i])
+				}
+			}
+			return arr
+		}
+		console.log(one(str))
+
+		//去重方法二：
+		function two(str){
+			var arr=[];
+			//从第一项开始和后面的依次作比较，如果一样则让让初始值变为下一项
+			for(var i=0;len=str.length,i<len;i++){
+				for(var j=i+1;j<len;j++){
+					if(str[i]===str[j]){
+						++i
+					}
+				}
+				arr.push(str[i])
+			}
+			return arr
+		}
+
+		console.log(two(str))
+	</script>
+</body>
+</html>
