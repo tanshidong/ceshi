@@ -1,0 +1,167 @@
+body
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  overflow: hidden
+.header
+  font-size: 16px
+  height: 44px
+  line-height: 44px
+  border-bottom: 1px solid #cccccc
+  text-align: center
+  span:nth-child(1)
+    position: absolute
+    left: 15px
+    top: 0
+  span:nth-child(3)
+    position: absolute
+    right: 15px
+    top: 0
+.section
+  flex: 1
+  background: #eee
+  overflow: scroll
+  .main
+    height: 88px
+    display: flex
+    background: #ffffff
+    .left
+      flex: 9
+      p:nth-child(1)
+        padding-left: 33px
+        padding-top: 12px
+        span
+          font-size: 15px
+      p:nth-child(2)
+        padding-left: 15px
+        padding-top: 18px
+    .right
+      padding-left: 8px
+      flex: 1
+      line-height: 88px
+      font-size: 14px
+  .img
+    height: 10px
+    img
+      height: 10px
+      width: 100%
+      float: left
+  .nav
+    margin-top: 10px
+    background: #ffffff
+    .head
+      padding-left: 15px
+      height: 45px
+      line-height: 45px
+      i
+        font-size: 20px
+        color: orange
+    .box
+      padding-left: 15px
+      padding-right: 15px
+      dl
+        display: flex
+        dt
+          flex: 3
+
+          img
+            width: 102px
+        dd
+          margin-left: 8px
+          font-size: 14px
+          flex: 7
+          p
+            line-height: 20px
+          .bottom
+            margin-top: 8px
+            line-height: 66px
+            .left
+              color: red
+              float: left
+            .right
+              width: 30%
+              height: 30px
+              line-height: 30px
+              margin-top: 18px
+              float: right
+              display: flex
+              span
+                flex: 3
+                text-align: center
+                border: 1px solid #cccccc
+              span:nth-child(2)
+                flex: 4
+      .foot
+        padding-top: 12px
+
+        p
+          height: 13px
+          padding-bottom: 12px
+          span:nth-child(1)
+            float: left
+          span:nth-child(2)
+            float: right
+          .allnum
+            color: red
+            font-size: 14px
+  .inner
+    background: #ffffff
+    margin-top: 10px
+    padding-left: 15px
+    padding-right: 15px
+    .some
+      font-size: 15px
+      height: 58px
+      line-height: 58px
+      border-bottom: 1px solid #cccccc
+
+
+
+      span:nth-child(1)
+        float: left
+      span:nth-child(2)
+        float: right
+        .track
+          margin-top: 15px
+
+
+
+
+
+.footer
+  height: 60px
+  border-top: 1px solid #cccccc
+  display: flex
+  div
+    flex: 1
+  div:nth-child(2)
+    p:nth-child(1)
+      color: red
+      padding-top: 10px
+      span
+        font-size: 14px
+    p:nth-child(2)
+      padding-top: 10px
+      text-align: center
+  div:nth-child(3)
+    font-size: 16px
+    background: #FC4141
+    color: #ffffff
+    line-height: 60px
+    text-align: center
+.bg
+  position: absolute
+  left: 10%
+  bottom: 60px
+  width: 80%
+  height: 38px
+  line-height: 38px
+  background: rgba(0,0,0,.7)
+  font-size: 14px
+  text-align: center
+  color: #ffffff
+  border-radius: 20px

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/button.css">
+</head>
+<body ng-controller="box1">
+<header class="header">
+    <span><i class="fa fa-angle-left"></i></span>
+    <span>订单支付</span>
+    <span><i class="fa fa-weixin"></i></span>
+</header>
+<section class="section">
+    <div class="main">
+        <div class="left">
+            <p><span>路飞</span> 134****8888</p>
+            <p><i class="fa fa-map-marker"></i> 北京市海淀区知春路北京市海淀区知春路北京市海淀区
+                知春路</p>
+        </div>
+        <div class="right"><i class="fa fa-angle-right"></i></div>
+    </div>
+    <div class="img"><img src="images/1.gif" alt=""></div>
+    <div class="nav">
+        <div class="head">
+            <i class="fa fa-home"></i> 恒之然旗舰店
+        </div>
+        <div class="box">
+            <dl>
+                <dt><img src="images/3.gif" alt=""></dt>
+                <dd>
+                    <p>维维嚼益嚼水果大豆棒橙味维维嚼
+                        益嚼水果大豆棒橙味..</p>
+                    <div class="bottom">
+                        <div class="left">
+                            ￥988.00
+                        </div>
+                        <div class="right">
+                            <span ng-click="sub()">-</span>
+                            <span ng-bind="num">1</span>
+                            <span ng-click="add()">+</span>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <div class="foot">
+                <p><span>商品总额</span> <span>￥{{num2}}</span></p>
+                <p><span>运费</span> <span>￥{{num3}}</span></p>
+                <p><span>总额（含运费）</span> <span class="allnum">￥{{num4}}</span></p>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="some">
+                <span>余额支付 ¥100.00</span>
+                <span>
+                    <label class="toggle-radio">
+                        <input type="checkbox" ng-model="checkbox1">
+                    <span class="track">
+                        <div class="icon"></div>
+                    </span>
+                    </label>
+
+                </span>
+            </div>
+            <div class="some">
+                <span>奖金支付 ¥100.00</span>
+                <span>
+                    <label class="toggle-radio">
+                        <input type="checkbox" ng-model="checkbox2">
+                    <span class="track">
+                        <div class="icon"></div>
+                    </span>
+                    </label>
+
+                </span>
+            </div>
+            <div class="some">
+                <span>其他支付方式</span>
+                <span><i class="fa fa-angle-right"></i></span>
+            </div>
+        </div>
+</section>
+<footer class="footer">
+    <div></div>
+    <div><p>总价是：<span>￥{{num5}}</span></p> <p>（含运费）</p></div>
+    <div>提交订单</div>
+</footer>
+<div class="bg" ng-show="checkbox1">金额不足，请选择其他支付方式！</div>
+<script src="js/angular.js"></script>
+<script>
+    var app=angular.module('app',[]);
+    app.controller('box1',function($scope,$rootScope){
+        $scope.num=1
+        $scope.num2=988
+        $scope.num3=10
+        $scope.num4=998
+        $scope.num5=998
+        //点击减号
+        $scope.sub=function(){
+            if($scope.num>1){
+                $scope.num--
+                $scope.num2=$scope.num*988
+
+                }
+            $scope.num4=$scope.num*988+$scope.num3
+            $scope.num5=$scope.num4
+        }
+        //点击加号
+        $scope.add=function(){
+            $scope.num++
+            $scope.num2=$scope.num*988
+            $scope.num4=$scope.num*988+$scope.num3
+            $scope.num5=$scope.num4
+
+        }
+
+    })
+
+
+</script>
+</body>
+</html>
